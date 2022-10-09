@@ -1,0 +1,176 @@
+<!--<meta charset="UTF-8" />
+
+<script>
+	function pulaLinha() {
+		document.write('<br>');
+		document.write('<br>');
+	}
+
+	function mostra(frase) {  // a frase aqui é meu parâmetro, eu tô dizendo pra função mostrar a frase que eu quero, ou seja, a frase(o parâmetro) vai ser substituída pela frase que eu passar dentro dos parenteses da função quando for chamar ela.
+		document.write(frase);
+		pulaLinha();
+	}
+
+	var ano = 2016;
+
+	mostra('Flávio tem ' + (ano - 1977) + " anos");
+
+	mostra("Joaquim tem " + (ano - 1996) + " anos");
+	
+	ano = 2017;
+	
+	mostra("Barney tem " + (ano - 1976) + " anos");
+
+</script>-->
+
+<!--Veja que funções são mais do que um conjunto de instruções que podemos chamar a qualquer momento, elas permitem melhorar a legibilidade do código escondendo sua complexidade.-->
+
+<!--Escreva um programa que exiba a mensagem "Nossa diferença de idade é", concatenando o resultado da subtração da sua idade com a do seu irmão (ou de um amigo). A resposta pode dar negativa, sem dúvida. Não esqueça de usar as funções pulaLinha e mostra e inclusive a tag <meta> para resolver problema de acentuação.-->
+<!--
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha () {
+		document.write("<br>")
+	}
+
+
+	function mostra(frase) {
+		var minhaIdade = 28
+		var idadeMilena = 23
+		var difeidade = minhaIdade - idadeMilena
+		//document.write(frase)
+		document.write(frase + difeidade);
+		pulaLinha();
+	}
+
+
+
+	mostra("A diferença de idade é : ");
+</script>-->
+
+
+<!-- Em média, um casal tem filhos quando atinge a idade de 28 anos. Seguindo essa média, se os portugueses chegaram em 1500 no Brasil, então, a primeira geração de brasileiros surgiu em 1528, a segunda em 1556 e assim por diante. Desde 1500 até o ano atual, quantas gerações se passaram?
+
+Vamos criar um programa para resolver a tarefa!
+
+Imprima esse número da seguinte maneira: calcule quantos anos passaram desde 1500 e divida o resultado pela média de 28 anos.
+
+Não esqueça de usar o pulaLinha e o mostra. -->
+
+<!--1500 - 2020 / 28-->
+
+
+<meta charset="UTF-8">
+
+<script>
+/*  function pulaLinha() {
+    document.write("<br><br>");
+    // aqui eu não uso o return pq a função já vai exibir algo na tela gerando duplicidade de função? ou tem outro motivo?
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+    
+
+  }
+*/
+  /*  var anoPortugueses = 1500;
+    var anoAtual = 2022;
+    var mediaFilhos = 28
+    var diferencaEmAnos = anoAtual - anoPortugueses;
+    var media = diferencaEmAnos / mediaFilhos;
+  
+  
+    mostra("A diferença é " + Math.round(media)); // a função math.round() arredonda pra mais*/
+
+/*  var ano = 2019;
+  mostra("Eu nasci em : " + (ano - 25));
+  mostra("Adriano nasceu em : " + (ano - 26));
+  mostra("Paulo nasceu em : " + (ano - 32));
+*/
+
+
+//function calculaImc(altura, peso) { /* uma função sempre retorna um parâmetro */
+  //var imc = peso / (altura * altura);
+  //return imc; /* o return só funciona pra algum valor que é modificado dentro da função e que depois disso precisa ser cuspido pra fora? a gente usa o return quando quer retornar algum valor específico da função  ou todo o valor da função que foi modificado/calculado dentro dela*/
+
+  //como só tem uma intrução, é possível fazer assim:
+  //return peso / (altura * altura)
+//}
+
+//var meuImc = calculaImc(1.66, 66);
+//var imcMilena = calculaImc(1.65, 53);
+//var totalImc = meuImc + imcMilena; 
+// ou
+//var totalImc = calculaImc(1.66, 66) + calculaImc(1.65, 53);
+
+//mostra(meuImc);
+//mostra(imcMilena);
+// mostra(totalImc);
+
+
+
+// deixando o programa interativo com o prompt
+
+  function pulaLinha() {
+    document.write("<br><br>");
+    // aqui eu não uso o return pq a função já vai exibir algo na tela gerando duplicidade de função? ou tem outro motivo?
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+
+function calculaImc(altura, peso) {
+  return peso / (altura * altura);
+
+}
+
+var nome = prompt("Informe seu nome:");
+var alturaInformada = prompt(nome + ", informe sua altura: (utilize ponto no lugar da vírgula)");
+var pesoInformado = prompt(nome + ", informe seu peso: (utilize ponto no lugar da vírgula)")
+
+var imc = calculaImc(alturaInformada, pesoInformado);
+
+mostra(nome + " o seu IMC é " + imc);
+
+if (imc < 18.5) {
+  mostra("IMC abaixo do peso")
+}
+
+if(imc > 35) {
+  mostra("imc acima do peso")
+}
+
+
+// forma verbosa de fazer o if
+
+if (imc >= 18.5) {
+  if (imc <= 35) {
+    mostra("Seu IMC está excelente")
+  }
+}
+
+
+/*if (imc < 18.5) {
+  mostra("O seu IMC está abaixo do recomendado = Baixo Peso")
+} else if (imc >= 18.5 && imc <= 24.9) {
+  mostra("O seu IMC está dentro do recomendado = Peso Normal")
+} else if (imc >= 25 && imc <= 29.9) {
+  mostra("Seu IMC está acima do recomendado = Sobrepeso")
+} else  if (imc >= 30 && imc <= 34.9) {
+  mostra ("O seu IMC está acima do recomendado = Obesidade Grau 1")
+} else if (imc >= 35 && imc <= 39.9) {
+  mostra ("O seu IMC está acima do recomendado = Obesidade Grau 2")
+} else if (imc > 40) {
+  mostra ("O seu IMC está acima do recomendado = Obesidade Grau 3")
+}
+*/
+</script>
+
+

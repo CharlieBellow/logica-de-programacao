@@ -1,0 +1,46 @@
+<canvas width="600" height="400"></canvas>
+<script>
+  var tela = document.querySelector('canvas');
+  var pincel = tela.getContext('2d');
+
+  pincel.fillStyle = 'grey';
+  pincel.fillRect(0,0,600,400)
+
+  var cores = ['blue', 'red', 'green']
+  var indiceCorAtual = 0
+
+  function desenhaCirculo(evento){
+
+    // saber qual a posição da tela em que vc clicou
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    pincel.fillStyle = cores[indiceCorAtual];
+    pincel.beginPath();
+    pincel.arc(x, y, 10, 0, 2 * 3.14)
+    pincel.fill();
+    console.log(`${x}, ${y}`);
+  }
+  
+  
+  // vai exibir o alerta só quando clicar.
+  tela.onclick = desenhaCirculo
+
+
+  function changeColor() {
+    indiceCorAtual++
+    
+    if(indiceCorAtual >= cores.length){
+      indiceCorAtual = 0;
+      // aqui eu volto pra zero e ele fica sempre mudando as cores. se eu quisesse que ele voltasse na ordem inversa eu poderia pegar o array e inverter e pedir que ele seguisse nessa ordem, ou decrementar de um jeito que desse certo.
+
+    }
+
+    alert(indiceCorAtual)
+    return false
+  }
+  tela.oncontextmenu = changeColor;
+
+
+
+</script>

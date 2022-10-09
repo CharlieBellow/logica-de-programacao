@@ -1,0 +1,45 @@
+<meta charset="utf-8" />
+
+<script>
+	function pulaLinha() {
+		document.write("<br><br>");
+	}
+
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+/*  DESAFIOS
+1 - Você pode criar uma função sorteia que recebe um número n e sorteia um número entre 0 a n, retornando esse valor. Dessa forma, em vez de escrever var numeroPensado = Math.round(Math.random() * n);, você escreveria var numeroPensado = sorteia(n);. Faça essa modificação, criando a nova função e utilize-a.
+
+2 - Faça com que seu jogo mostre, quando o usuário errar a tentativa, se o número que ele chutou era maior ou menor ao número pensado pelo programa.*/
+
+  function sorteia(numero) {
+    return Math.round(Math.random() * numero);
+  }
+
+  var numeroPensado = sorteia(0); 
+  
+  /* a função Math.random() cria um número aleatório com uma casa decimal iniciando em zero e vários números depois da vírgula. se eu usar a função Math.round() pra arredondar a função pra mais, ele arredonda esse número quebrado pra 1. Mas quero que ele gere um número de 1 a 10, então multiplico por 10 pra ele andar uma casa decimal e chegar em 10 */
+
+  console.log(numeroPensado); /* com o console log eu consigo ver qual é o número pensado e testar a função */
+  var tentativas = 1;
+  while(tentativas <= 3) {
+
+    var chute = parseInt(prompt("Digite seu chute de 1 a 100"));
+  
+    if(chute == numeroPensado) {
+      mostra("você acertou!");
+      break;
+    } else if (chute > numeroPensado){
+      mostra("você errou, o seu chute é maior que " + numeroPensado)
+    } else {
+      mostra("você errou")
+    }
+    tentativas++;
+  }
+  
+
+
+</script>

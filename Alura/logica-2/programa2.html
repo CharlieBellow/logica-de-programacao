@@ -1,0 +1,70 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  
+/*  function desenhaQuadrado(x, y, cor) {
+    
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    
+    pincel.fillStyle = cor;
+    pincel.fillRect(x, y, 50, 50);
+    pincel.fillStroke = 'black'
+    pincel.strokeRect(x, y, 50, 50)
+
+  }
+
+/*  var x = 0
+
+  while(x < 600) {
+    desenhaQuadrado(x, 0, 'green');
+    desenhaQuadrado(x, 50, 'red');
+  }*/
+ /* 
+  for (var x = 0; x < 600; x += 50) {
+    desenhaQuadrado(x, 0, 'green');
+   
+    
+}*/
+
+
+
+  /*
+ pincel.fillRect(50, 0, 50, 50);
+ pincel.strokeRect(50,0, 50, 50)
+ 
+ pincel.fillRect(100, 0, 50, 50);
+ pincel.strokeRect(100,0, 50, 50)
+ 
+ pincel.strokeRect(150,0, 50, 50)
+ 
+   */
+
+function desenhaEsquadro(xa, ya, xc, yc, cor) {
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+  pincel.fillStyle = cor
+  pincel.beginPath(); /* começar um caminho */
+  pincel.moveTo(xa, ya); /* posicionando o pincel */
+  pincel.lineTo(xa, yc); /* escrevendo uma linha */
+  pincel.lineTo(xc, yc); /* escrevendo uma linha */
+  pincel.fill();
+
+  pincel.fillStyle = "white"
+  pincel.beginPath();
+  pincel.moveTo((6*xa + xc)/7, (9*ya + 5*yc)/14);
+  pincel.lineTo((6*xa + xc)/7, (ya + 6*yc)/7);
+  pincel.lineTo((5*xa + 9*xc)/14, (ya + 6*yc)/7);
+  pincel.fill();
+
+}
+
+desenhaEsquadro(50, 50, 400, 400, 'black')
+//desenhaEsquadro(100, 175, 275, 350, 'white')
+
+
+
+
+</script>

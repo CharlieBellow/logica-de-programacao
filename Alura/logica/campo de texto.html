@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+
+<input type="text">
+<button>Compare com meu segredo</button>
+
+
+<script>
+// campos de texto 
+
+// Jogo advinha+
+
+
+var segredo = Math.round(Math.random() * 10);
+var input = document.querySelector("input");
+input.focus();
+// esse input.focus garante que o foco permaneça mesmo depois de recarregar a página
+console.log(segredo);
+// a função pode ser usada para guardar um código que só vai ser executado quando eu chamar a função
+
+function verifica() {
+  if(input.value == segredo) {
+    alert("você acertou");
+  } else {
+    alert("você errou");
+  }
+
+  input.value = ""; 
+  // limpando o campo pra pessoa digitar tudo de novo
+  input.focus();
+  //adicionando foco na caixinha pra que ela já fique selecionada quando sair do alert
+
+}
+
+var button = document.querySelector("button");
+
+button.onclick = verifica;
+// usando o atalho da função verifica eu posso guardar a função verifica e só chamar quando o botão for clicado.
+// ou seja, estou associando a execução da função ao click de um botão..
+
+// é por isso que um programa tem uma função principal que vai iniciar o programa e essa função tem a incubência de chamar as outras funções quando necessário. e para o programa rodar, a gente só chama aquela função inicial
+
+
+
+
+
+</script>
